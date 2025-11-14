@@ -2,111 +2,84 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Справка: корректировка БП-2026 (нетарифные услуги)</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Справка для ГД — БП-2026 (нетарифные услуги)</title>
 <meta name="color-scheme" content="light dark" />
 <style>
   :root{
-    --bg: #f7f9fc;
-    --card: #ffffff;
-    --text: #172033;
-    --muted:#6b7280;
-    --blue:#0033a0;     /* Россети-синий */
-    --cyan:#00b4f0;     /* акцент */
-    --ok:#16a34a;
-    --warn:#ea580c;
-    --danger:#dc2626;
-    --shadow: 0 10px 30px rgba(17,24,39,.08);
-    --radius: 16px;
+    --bg:#f7f9fc; --card:#ffffff; --text:#172033; --muted:#6b7280;
+    --blue:#0033a0; --cyan:#00b4f0; --ok:#16a34a; --warn:#ea580c; --danger:#dc2626;
+    --shadow:0 10px 30px rgba(17,24,39,.08); --radius:16px;
   }
   @media (prefers-color-scheme: dark){
-    :root{
-      --bg:#0b1220;
-      --card:#0f172a;
-      --text:#e5e7eb;
-      --muted:#94a3b8;
-      --shadow: 0 10px 30px rgba(0,0,0,.45);
-    }
+    :root{ --bg:#0b1220; --card:#0f172a; --text:#e5e7eb; --muted:#94a3b8; --shadow:0 10px 30px rgba(0,0,0,.45) }
   }
   html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
-  .wrap{max-width:1080px;margin:0 auto;padding:96px 20px 60px}
-  header{
-    position:sticky;top:0;z-index:9;
-    backdrop-filter: blur(6px);
-    background: color-mix(in oklab, var(--bg) 75%, transparent);
-    border-bottom:1px solid color-mix(in oklab, var(--text) 10%, transparent);
-  }
-  .nav{max-width:1080px;margin:0 auto;display:flex;gap:12px;align-items:center;justify-content:space-between;padding:14px 20px}
-  .brand{display:flex;gap:12px;align-items:center;font-weight:700;color:var(--blue)}
-  .brand .dot{width:12px;height:12px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px color-mix(in oklab,var(--cyan) 25%, transparent)}
-  .nav a, .nav button{
-    appearance:none;border:1px solid color-mix(in oklab, var(--text) 18%, transparent);
-    background:var(--card);color:var(--text);padding:10px 14px;border-radius:10px;cursor:pointer;
-    box-shadow: var(--shadow); text-decoration:none; font-weight:600;
-  }
-  .nav .actions{display:flex;gap:10px;flex-wrap:wrap}
-  h1{margin:0 0 10px;font-size:clamp(22px,3.6vw,34px);color:var(--blue)}
-  .sub{color:var(--muted);margin-bottom:22px}
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-  @media (max-width:900px){ .cards{grid-template-columns:1fr} }
-  .card{
-    background:var(--card); border-radius:var(--radius); padding:20px; box-shadow:var(--shadow);
-    border:1px solid color-mix(in oklab, var(--text) 10%, transparent);
-  }
-  .card h3{margin:0 0 10px; font-size:18px}
-  .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-  @media (max-width:700px){ .kpi{grid-template-columns:1fr 1fr} }
-  .pill{
-    border:1px dashed color-mix(in oklab, var(--text) 20%, transparent);
-    border-radius:12px; padding:12px; display:flex; flex-direction:column; gap:6px; background:color-mix(in oklab, var(--card) 85%, var(--bg));
-  }
+  header{position:sticky;top:0;z-index:9;backdrop-filter:blur(6px);
+    background:color-mix(in oklab,var(--bg) 80%, transparent);
+    border-bottom:1px solid color-mix(in oklab,var(--text) 10%, transparent)}
+  .nav{max-width:1080px;margin:0 auto;padding:12px 20px;display:flex;gap:12px;align-items:center;justify-content:space-between}
+  .brand{display:flex;gap:10px;align-items:center;font-weight:800;color:var(--blue)}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px color-mix(in oklab,var(--cyan) 25%, transparent)}
+  .btn,a.btn{appearance:none;border:1px solid color-mix(in oklab,var(--text) 18%, transparent);background:var(--card);color:var(--text);
+    padding:9px 14px;border-radius:10px;cursor:pointer;box-shadow:var(--shadow);text-decoration:none;font-weight:600}
+  .btn.primary{background:var(--blue);color:#fff;border:none}
+  .wrap{max-width:1080px;margin:0 auto;padding:72px 20px 64px}
+  h1{margin:0 0 6px;font-size:clamp(22px,3.6vw,34px);color:var(--blue)}
+  .sub{color:var(--muted);margin-bottom:18px}
+  .card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow);
+    border:1px solid color-mix(in oklab,var(--text) 10%, transparent);margin-bottom:16px}
+  .kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media (max-width:900px){ .kpi{grid-template-columns:1fr 1fr} }
+  @media (max-width:640px){ .kpi{grid-template-columns:1fr} }
+  .pill{border:1px dashed color-mix(in oklab,var(--text) 20%, transparent);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:6px;
+    background:color-mix(in oklab,var(--card) 85%, var(--bg))}
   .pill b{font-size:18px}
-  .row{display:flex;justify-content:space-between;gap:10px}
-  .muted{color:var(--muted)}
-  .ok{color:var(--ok)} .warn{color:var(--warn)} .danger{color:var(--danger)}
-  ul{margin:8px 0 0 20px}
-  .hint{font-size:13px;color:var(--muted);margin-top:8px}
-  .foot{margin-top:22px;font-size:13px;color:var(--muted)}
-  .cta{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
-  .cta button{background:var(--blue);color:white;border:none}
+  .num{font-feature-settings:"tnum" 1,"lnum" 1;font-variant-numeric:tabular-nums}
+  .muted{color:var(--muted)} .ok{color:var(--ok)} .warn{color:var(--warn)} .danger{color:var(--danger)}
+  ul{margin:8px 0 0 20px} li{margin:6px 0}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:900px){ .grid{grid-template-columns:1fr} }
+  .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
   .switch{display:flex;gap:10px;align-items:center;margin-top:8px}
-  .switch input{transform:scale(1.15)}
-  .num{font-feature-settings:"tnum" 1,"lnum" 1; font-variant-numeric: tabular-nums}
-  /* печать */
+  .hint{font-size:13px;color:var(--muted);margin-top:6px}
+  .foot{margin-top:10px;font-size:13px;color:var(--muted)}
+  img.g{width:100%;height:auto;border-radius:12px;border:1px solid color-mix(in oklab,var(--text) 10%, transparent)}
   @media print{
-    header{position:static;box-shadow:none}
+    header{position:static}
     .nav .actions{display:none}
     .wrap{padding:20px}
-    .cards{grid-template-columns:1fr 1fr}
   }
 </style>
 </head>
 <body>
 <header>
   <div class="nav">
-    <div class="brand"><span class="dot"></span>АО «Россети Кубань» — Справка для ГД</div>
+    <div class="brand"><span class="dot" aria-hidden="true"></span>АО «Россети Кубань» — Справка для ГД</div>
     <div class="actions">
-      <a href="#top">В начало</a>
-      <button id="printBtn">Печать / в PDF</button>
-      <button id="copyBtn">Скопировать тезисы</button>
+      <a class="btn" href="#top">В начало</a>
+      <button class="btn" id="printBtn">Печать / PDF</button>
+      <button class="btn" id="copyBtn">Скопировать тезисы</button>
+      <a class="btn" href="СПРАВКА_корректировка_БП_2026_нетарифные_услуги.docx" download>Скачать Word</a>
+      <a class="btn" href="rossseti_kuban_one_slide_numbers.png" target="_blank">Открыть слайд PNG</a>
     </div>
   </div>
 </header>
 
 <main class="wrap" id="top">
-  <h1>Корректировка БП-2026 по нетарифным услугам</h1>
-  <div class="sub">Цель: исключить неуправляемый риск «Порта» из планов и КПЭ, зафиксировать реалистичный рост ≤ 10% по «рыночной» базе.</div>
+  <h1>Корректировка БП-2026: нетарифные услуги</h1>
+  <div class="sub">Добавлена секция: «Фактически достигнутые результаты и динамика 2015–2025 (ожид.)».</div>
 
   <!-- Ключевые цифры -->
-  <section class="card">
-    <h3>Ключевые цифры (тыс. руб.)</h3>
+  <section class="card" aria-labelledby="hKey">
+    <h2 id="hKey" style="margin:0 0 10px;font-size:20px">Ключевые цифры (тыс. руб.)</h2>
     <div class="kpi">
       <div class="pill">
         <span class="muted">База-2025 (без «Порта»)</span>
         <b class="num" id="base2025">1 134 263</b>
       </div>
       <div class="pill">
-        <span class="muted">Ожидаемый факт-2025 всего</span>
+        <span class="muted">Факт-2025 (ожид.) всего</span>
         <b class="num" id="fact2025">1 426 548</b>
         <span class="muted">в т.ч. «Порт»: <b class="num" id="portRev">292 285</b></span>
       </div>
@@ -117,7 +90,7 @@
       <div class="pill">
         <span class="muted">Сценарий «с Портом» (при пролонгации)</span>
         <b class="num warn" id="planWithPort">1 505 392</b>
-        <span class="hint">Не предлагать к включению в KPI</span>
+        <span class="hint">Не включать в KPI</span>
       </div>
       <div class="pill">
         <span class="muted">Ограничение роста</span>
@@ -126,178 +99,121 @@
       </div>
       <div class="pill">
         <span class="muted">Разовые проекты 2024–2025</span>
-        <b class="num">> 490 700</b>
+        <b class="num">&gt; 490 700</b>
         <span class="muted">не формируют базу-2026</span>
       </div>
     </div>
 
     <div class="switch">
       <input type="checkbox" id="togglePort" />
-      <label for="togglePort">Показать итог по плану <b>с учётом «Порта»</b> (для сравнения, вне KPI)</label>
+      <label for="togglePort">Показать итог «с Портом» (для сравнения, вне KPI)</label>
     </div>
-    <div class="foot">Справочные ограничения: ~1 128 НП &lt; 500 чел.; удалённость 30–40 км; аграрная структура; низкая инвестактивность.</div>
   </section>
 
-  <section class="cards" id="sections">
+  <!-- НОВОЕ: Фактически достигнутые результаты и динамика -->
+  <section class="card" aria-labelledby="hDyn">
+    <h2 id="hDyn" style="margin:0 0 10px;font-size:20px">Фактически достигнутые результаты и динамика (2015–2025 ожид.)</h2>
+    <ul>
+      <li>Рост выручки 2015 → 2025 (ожид.): <b class="num">87 884 → 1 426 548</b> тыс. руб. (<b class="num">×16,23</b> раз).</li>
+      <li>Среднегодовой темп роста (CAGR) за 10 лет: <b class="num">≈32,1%</b>.</li>
+      <li>Лучший год по приросту: <b>2020</b> к 2019 — <b class="num">+90,3%</b> (до <b class="num">536 391</b>).</li>
+      <li>Снижение: <b>2023</b> к 2022 — <b class="num">−9,1%</b> (до <b class="num">912 449</b>), затем рывок 2024: <b class="num">+40,6%</b>.</li>
+      <li>Итог 2025 (ожид.) — <b class="num">1 426 548</b> тыс. руб. (в т.ч. «Порт» — <b class="num">292 285</b>).</li>
+    </ul>
+    <div class="hint">Источник: «Выручка по прочей деятельности 2015–2030», лист «АО “Россети Кубань”».</div>
+    <img class="g" src="revenue_trend_2015_2025.png" alt="График выручки 2015–2025 ожид., тыс. руб." />
+  </section>
+
+  <!-- Остальные разделы -->
+  <section class="grid">
     <article class="card">
       <h3>1) Исходные данные</h3>
       <ul>
-        <li>База-2025 по нетарифным услугам <b>без ПС «Порт»</b> — <span class="num">1 134 263</span>.</li>
-        <li>Ожидаемый факт-2025 всего — <span class="num">1 426 548</span>, в т.ч. «Порт» — <span class="num">292 285</span>.</li>
-        <li>По «Порту» рассматривается <b>передача в ФСК</b> (ориентир — март 2026; мена). Механизма нет; материалы на Правление <b>не выносятся</b> (запрет Мусинова).</li>
-        <li>ГД планирует совещание по БП и мене — <b>во вторник</b>.</li>
+        <li>База-2025 по нетарифке <b>без ПС «Порт»</b> — <span class="num">1 134 263</span>.</li>
+        <li>Факт-2025 (ожид.) — <span class="num">1 426 548</span>, «Порт» — <span class="num">292 285</span>.</li>
+        <li>По «Порту» рассматривается <b>передача в ФСК</b> (мена; ориентир — март-2026). Механизма нет; материал на Правление <b>не выносится</b>.</li>
       </ul>
     </article>
 
     <article class="card">
-      <h3>2) Предлагаемая конфигурация БП-2026</h3>
+      <h3>2) Конфигурация БП-2026</h3>
       <ul>
-        <li><b>Зафиксировать</b> базу-2025 без «Порта» и план-2026 с ростом ≤ 10%: <span class="num">1 247 689</span>.</li>
-        <li>Сценарий «с Портом»: <span class="num">1 505 392</span> — <b>вне KPI</b>, как плюс-сценарий при пролонгации.</li>
+        <li><b>Фиксировать</b> базу-2025 без «Порта»; план-2026 ≤ 10%: <span class="num">1 247 689</span>.</li>
+        <li>Сценарий «с Портом»: <span class="num">1 505 392</span> — <b>вне KPI</b>, только как плюс при пролонгации.</li>
         <li>KPI считать <b>только</b> от «рыночной» базы: <span class="num">1 247 689</span>.</li>
       </ul>
     </article>
 
     <article class="card">
-      <h3>3) Обоснование ≤ 10%</h3>
+      <h3>3) Риск по КПЭ и премии</h3>
       <ul>
-        <li>Структурные ограничения спроса: рассредоточенная сельская территория.</li>
-        <li>Ценовой потенциал исчерпан: прейскурант-2025 уже по ИПЦ.</li>
-        <li>Разовые проекты 2024–2025 &gt; <span class="num">490 700</span>: <b>не база</b> для роста-2026.</li>
+        <li>При 4 КПЭ — риск потери <b class="num">25%</b> премии; при 3 КПЭ — <b class="num">≈33%</b>.</li>
+        <li>Причина: включение «Порта» (<span class="num">292 285</span>) в план/KPI при высокой неопределённости статуса актива.</li>
       </ul>
     </article>
 
     <article class="card">
-      <h3>4) Ситуация по «Порту»</h3>
-      <ul>
-        <li>Передача в ФСК (мена, март-2026, ориентир) — <b>высокая неопределённость</b>.</li>
-        <li>Решения находятся <b>вне управляемости</b> исполнителей нетарифки.</li>
-        <li>Включение в KPI создаёт <b class="danger">искусственный риск невыполнения</b>.</li>
-      </ul>
-    </article>
-
-    <article class="card">
-      <h3>5) Риск для КПЭ и премии</h3>
-      <div class="row">
-        <div>
-          <label class="muted">Количество КПЭ руководителя</label>
-          <div class="cta">
-            <button type="button" data-kpi="3">3 КПЭ</button>
-            <button type="button" data-kpi="4">4 КПЭ</button>
-          </div>
-        </div>
-        <div>
-          <div class="pill">
-            <span class="muted">Потенциальная потеря премии при срыве KPI по нетарифке</span>
-            <b class="num danger" id="lossPct">33%</b>
-          </div>
-        </div>
-      </div>
-      <ul>
-        <li>При 4 КПЭ — риск потери <b class="num">25%</b> премии.</li>
-        <li>При 3 КПЭ — риск потери <b class="num">≈33%</b> премии.</li>
-      </ul>
-      <div class="hint">Причина: включение «Порта» (<span class="num">292 285</span>) в план/KPI при высокой вероятности выбытия/изменения модели.</div>
-    </article>
-
-    <article class="card">
-      <h3>6) Предложение (к утверждению)</h3>
+      <h3>4) Предложение (к утверждению)</h3>
       <ul>
         <li><b>Исключить</b> из плана-2026 выручку «Порта» <span class="num">292 285</span>.</li>
-        <li><b>Утвердить</b> итог БП-2026 (для планирования и KPI) — <b><span class="num">1 247 689</span></b> (без «Порта»).</li>
-        <li>Выручку «Порта» вести <b>отдельным треком</b>, вне KPI.</li>
+        <li><b>Утвердить</b> план и KPI по нетарифке: <b><span class="num">1 247 689</span></b> (без «Порта»).</li>
+        <li>«Порт» вести <b>отдельно</b>, вне KPI; при пролонгации — как дополнительный результат.</li>
       </ul>
-      <div class="hint">Это устраняет прямой риск невыполнения плана-2026 и необоснованной потери премии.</div>
     </article>
   </section>
 
+  <!-- Тезисы + печать -->
   <section class="card">
-    <h3>Краткий тезисный блок (1 клик = копировать)</h3>
-    <textarea id="summary" rows="7" style="width:100%;border-radius:12px;padding:12px;border:1px solid color-mix(in oklab, var(--text) 20%, transparent);background:color-mix(in oklab, var(--card) 90%, var(--bg));color:var(--text);">
-БП-2026 (нетарифка): зафиксировать «рыночную» базу-2025 без «Порта» (1 134 263); план-2026 ≤10% = 1 247 689. «Порт» (292 285) вести отдельным треком, вне KPI; сценарно с «Портом» = 1 505 392.
-Обоснование ≤10%: цены уже по ИПЦ; структурные ограничения спроса; разовые проекты 2024–2025 > 490,7 млн не формируют базу-2026.
-Риск: включение «Порта» в план/KPI = прямой риск невыполнения 2026 г.; при 4 КПЭ — до 25% минус премии; при 3 КПЭ — ~33% минус премии.
-Предложение: исключить 292 285 из плана-2026; утвердить KPI по 1 247 689; «Порт» — только внеквотный плюс при пролонгации.
+    <h3>Краткие тезисы (копирование/печать)</h3>
+    <textarea id="summary" rows="7" style="width:100%;border-radius:12px;padding:12px;border:1px solid color-mix(in oklab,var(--text) 20%, transparent);background:color-mix(in oklab,var(--card) 90%, var(--bg));color:var(--text);">
+История результата: 2015→2025(ожид.) = 87 884 → 1 426 548 тыс. руб. (×16,23; CAGR ≈32,1%). Пик прироста 2020: +90,3%; просадка 2023: −9,1%; рывок 2024: +40,6%.
+БП-2026: базу-2025 без «Порта» (1 134 263) фиксируем; план-2026 ≤10% = 1 247 689. «Порт» (292 285) — отдельно, вне KPI; сценарий «с Портом» = 1 505 392.
+Риск: включение «Порта» в план/KPI = прямой риск невыполнения 2026; при 4 КПЭ — до 25% минус премии; при 3 КПЭ — ~33%.
+Предложение: исключить 292 285 из плана-2026; утвердить KPI по 1 247 689; «Порт» — внеквотный плюс при пролонгации.
     </textarea>
     <div class="cta">
-      <button id="copyBtn2">Скопировать</button>
-      <button id="printBtn2">Печать / в PDF</button>
+      <button class="btn primary" id="copyBtn2">Скопировать тезисы</button>
+      <button class="btn" id="printBtn2">Печать / PDF</button>
     </div>
-    <div class="foot">Подготовлено для доклада. Версия: ноябрь 2025.</div>
+    <div class="foot">Версия: ноябрь 2025. Подготовлено для доклада.</div>
   </section>
 </main>
 
 <script>
-  // ДАННЫЕ (можно править)
-  const data = {
-    base2025: 1134263,   // база-2025 без "Порта"
-    fact2025: 1426548,   // факт-2025 всего
-    port: 292285,        // выручка "Порта"
-    growth: 0.10         // ограничение на план-2026
-  };
-
-  // Расчёты и форматирование
+  // Исходные данные (можно обновлять при необходимости)
+  const data = { base2025: 1134263, fact2025: 1426548, port: 292285, growth: 0.10 };
   const fmt = x => x.toLocaleString('ru-RU');
   const planNoPort = Math.round(data.base2025 * (1 + data.growth));
   const planWithPort = planNoPort + data.port;
 
-  // Вывод в карточки
-  document.getElementById('base2025').textContent   = fmt(data.base2025);
-  document.getElementById('fact2025').textContent   = fmt(data.fact2025);
-  document.getElementById('portRev').textContent    = fmt(data.port);
-  document.getElementById('planNoPort').textContent = fmt(planNoPort);
-  document.getElementById('planWithPort').textContent = fmt(planWithPort);
+  // Вывод чисел
+  base2025.textContent   = fmt(data.base2025);
+  fact2025.textContent   = fmt(data.fact2025);
+  portRev.textContent    = fmt(data.port);
+  planNoPort.textContent = fmt(planNoPort);
+  planWithPort.textContent = fmt(planWithPort);
 
-  // Переключатель "с Портом"
-  const toggle = document.getElementById('togglePort');
-  toggle.addEventListener('change', () => {
-    const el = document.getElementById('planNoPort');
-    const withPort = document.getElementById('planWithPort');
-    if (toggle.checked){
-      el.style.opacity = .35;
-      withPort.style.opacity = 1;
-      withPort.scrollIntoView({behavior:'smooth', block:'center'});
-    } else {
-      el.style.opacity = 1;
-      withPort.style.opacity = .35;
-      el.scrollIntoView({behavior:'smooth', block:'center'});
-    }
+  // Переключатель «с Портом»
+  togglePort.addEventListener('change', () => {
+    planNoPort.style.opacity  = togglePort.checked ? .35 : 1;
+    planWithPort.style.opacity = togglePort.checked ? 1 : .35;
+    (togglePort.checked ? planWithPort : planNoPort).scrollIntoView({behavior:'smooth', block:'center'});
   });
-  // начальное состояние: подчёркиваем «без Порта»
-  document.getElementById('planWithPort').style.opacity = .35;
-
-  // Печать / в PDF
-  function doPrint(){ window.print(); }
-  document.getElementById('printBtn').addEventListener('click', doPrint);
-  document.getElementById('printBtn2').addEventListener('click', doPrint);
+  planWithPort.style.opacity = .35; // акцент на «без Порта»
 
   // Копирование тезисов
-  async function copySummary(){
-    const ta = document.getElementById('summary');
-    ta.select(); ta.setSelectionRange(0, ta.value.length);
-    try{
-      await navigator.clipboard.writeText(ta.value);
-      alert('Тезисы скопированы в буфер обмена');
-    }catch(e){
-      document.execCommand('copy');
-      alert('Скопировано');
-    }
+  async function copySummary(area){
+    area.select(); area.setSelectionRange(0, area.value.length);
+    try{ await navigator.clipboard.writeText(area.value); alert('Тезисы скопированы'); }
+    catch{ document.execCommand('copy'); alert('Скопировано'); }
   }
-  document.getElementById('copyBtn').addEventListener('click', copySummary);
-  document.getElementById('copyBtn2').addEventListener('click', copySummary);
+  copyBtn.addEventListener('click', () => copySummary(summary));
+  copyBtn2.addEventListener('click', () => copySummary(summary));
 
-  // Калькулятор потери премии для 3/4 КПЭ
-  const lossEl = document.getElementById('lossPct');
-  const kpiButtons = document.querySelectorAll('[data-kpi]');
-  kpiButtons.forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const n = Number(btn.dataset.kpi);
-      const loss = n===4 ? 25 : 33;
-      lossEl.textContent = loss + '%';
-      lossEl.classList.add('danger');
-      setTimeout(()=>lossEl.classList.remove('danger'), 300);
-    });
-  });
+  // Печать / PDF
+  function doPrint(){ window.print(); }
+  printBtn.addEventListener('click', doPrint);
+  printBtn2.addEventListener('click', doPrint);
 </script>
 </body>
 </html>
